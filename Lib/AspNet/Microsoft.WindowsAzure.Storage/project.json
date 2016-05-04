@@ -1,68 +1,50 @@
 ﻿{
-    "version": "7.0.1.0",
+    "version": "7.0.1.6",
     "authors": [ "Microsoft Corporation" ],
     "description": "Azure Storage SDK for CoreCLR Preview",
     "dependencies": {
         "Microsoft.Data.OData": "5.6.4",
         "Microsoft.Data.Services.Client": "5.6.4",
         "System.Spatial": "5.6.4",
-        "Newtonsoft.Json":  "6.0.8"
+        "Newtonsoft.Json": "6.0.8"
     },
     "frameworks": {
         "dotnet5.4": {
             "dependencies": {
-                "System.Collections": "4.0.11-beta-*",
-                "System.Collections.Concurrent": "4.0.11-beta-*",
-                "System.Collections.Specialized": "4.0.0-beta-*",
-                "System.Diagnostics.Debug": "4.0.11-beta-*",
-                "System.Diagnostics.Tools": "4.0.1-beta-*",
-                "System.Diagnostics.TraceSource": "4.0.0-beta-*",
-                "System.Diagnostics.Tracing": "4.0.21-beta-*",
-                "System.Dynamic.Runtime": "4.0.11-beta-*",
-                "System.Globalization": "4.0.11-beta-*",
-                "System.IO": "4.0.11-beta-*",
-                "System.IO.FileSystem": "4.0.1-beta-*",
-                "System.IO.FileSystem.Primitives": "4.0.1-beta-*",
-                "System.Linq": "4.0.1-beta-*",
-                "System.Linq.Expressions": "4.0.11-beta-*",
-                "System.Linq.Queryable": "4.0.0-beta-*",
-                "System.Net.Http": "4.0.1-beta-*",
-                "System.Net.Primitives": "4.0.11-beta-*",
-                "System.Reflection": "4.1.0-beta-*",
-                "System.Reflection.Extensions": "4.0.1-beta-*",
-                "System.Reflection.TypeExtensions": "4.0.1-beta-*",
-                "System.Runtime": "4.0.20-beta-*",
-                "System.Runtime.Extensions": "4.0.11-beta-*",
-                "System.Runtime.InteropServices": "4.0.21-beta-*",
-                "System.Runtime.Serialization.Primitives": "4.0.0-beta-*",
-                "System.Runtime.Serialization.Xml": "4.0.10-beta-*",
-                "System.Security.Cryptography.Encoding": "4.0.0-beta-*",
-                "System.Security.Cryptography.Primitives": "4.0.0-beta-*",
-                "System.Security.Cryptography.Algorithms": "4.0.0-beta-*",
-                "System.Text.Encoding": "4.0.11-beta-*",
-                "System.Text.Encoding.Extensions": "4.0.11-beta-*",
-                "System.Text.RegularExpressions": "4.0.11-beta-*",
-                "System.Threading": "4.0.11-beta-*",
-                "System.Threading.Tasks": "4.0.11-beta-*",
-                "System.Threading.Thread": "4.0.0-beta-*",
-                "System.Threading.ThreadPool": "4.0.10-beta-*",
-                "System.Threading.Timer": "4.0.1-beta-*",
-                "System.Xml.ReaderWriter": "4.0.11-beta-*",
-                "System.Xml.XDocument": "4.0.11-beta-*",
-                "System.Xml.XmlSerializer": "4.0.0-beta-*"
+                "NETStandard.Library": "1.5.0-*",
+                "System.Dynamic.Runtime": "4.0.11-*"
+            }
+        },
+        "netstandardapp1.5": {
+            "frameworkAssemblies": {
+            },
+            "dependencies": {
+                "NETStandard.Library": "1.5.0-*",
+                "System.Dynamic.Runtime": "4.0.11-*"
+            },
+            "imports": [
+                "dnxcore50",
+                "portable-net451+win8"
+            ]
+        },
+        "net451": {
+            "frameworkAssemblies": {
+                "System.Xml": "4.0.0.0",
+                "System.Xml.Linq": "4.0.0.0"
+            },
+            "dependencies": {
+                "NETStandard.Library": "1.5.0-*"
             }
         }
     },
     "compilationOptions": {
         "define": [ "ASPNET_K" ],
         "allowUnsafe": false,
-        "warningsAsErrors": true,
-        "delaySign": true,
-        "keyFile":  "MSSharedLibKey.snk"
+        "warningsAsErrors": true
     },
     "compile": [
         "**/*.cs",
-                
+
         "../../Common/*.cs",
         "../../Common/Shared/**/*.cs",
         "../../Common/Auth/**/*.cs",
